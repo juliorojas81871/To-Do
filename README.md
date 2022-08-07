@@ -1,7 +1,6 @@
 # Description:
-This code is a React program where the user can enter their notes and display them on the page.
-The user can also delete the note once they are finished. I also used a bit of material-UI for the buttons 
-and the increased size of the notes.
+This code is a React program where the user can enter their list and remove it when they press 
+the bullet note.
 If anyone want try this code, [please click at this link](https://juliorojas81871.github.io/To-Do/).
 
 # Steps to get code to run:
