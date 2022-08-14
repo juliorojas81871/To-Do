@@ -2,8 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App";
 
-ReactDOM.render(<App />, document.getElementById("root"));
-
+ReactDOM.render(<React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 //CHALLENGE: I have extracted the Input Area, including the <input> and
 //<button> elements into a seperate Component called InputArea.
 //Your job is to make the app work as it did before but this time with the

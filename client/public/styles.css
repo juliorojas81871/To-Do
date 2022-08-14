@@ -63,6 +63,7 @@ button {
   padding-bottom: 3px;
   border-radius: 5px;
   background-color: #ffeaa7;
+  cursor: pointer;
 }
 button span {
   background: #f1f5f8;
@@ -76,4 +77,10 @@ li {
   text-align: left;
   position: relative;
   padding: 0.5rem;
+}
+
+li .icons{
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
 }
