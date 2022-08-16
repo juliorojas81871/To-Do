@@ -4,7 +4,9 @@
   "description": "This code is a React program where the user can enter their list and remove it when they press \r the bullet note.\r If anyone want try this code, [please click at this link](https://juliorojas81871.github.io/To-Do/).",
   "main": "Server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon Server.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "repository": {
     "type": "git",
@@ -12,6 +14,9 @@
   },
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "16.16.0"
+  },
   "bugs": {
     "url": "https://github.com/juliorojas81871/To-Do/issues"
   },

@@ -23,6 +23,11 @@ mongoose
     .then(() => console.log("Mongodb Connected..."))
     .catch((err) => console.error(err));
 
-app.listen(5000, () => {
-    console.log("app listening on port 5000")
-});
+    let port = process.env.PORT;
+    if(port == null || port == ""){
+        port = 5000;
+    }
+    
+    app.listen(port, () => {
+        console.log("app listening on port 5000")
+    });

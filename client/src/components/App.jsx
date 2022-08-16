@@ -67,7 +67,6 @@ function App() {
               key={item._id}
               id={item._id}
               text={item.text}
-              // onChecked={deleteItem}
               remove={() => deleteItem(item._id)}
               update={() => updateItem(item._id, item.text)}
             />)}
