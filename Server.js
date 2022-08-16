@@ -15,6 +15,8 @@ app.use(cors());
 // Routes
 app.use(routes);
 
+const PORT = process.env.PORT || 5000
+
 mongoose
     .connect(process.env.MONGO_URL, {
         useNewUrlParser: true,
