@@ -19,7 +19,8 @@
   "author": "",
   "license": "ISC",
   "engines": {
-    "node": "16.16.0"
+    "node": "16.16.0",
+    "npm": "8.11.0"
   },
   "bugs": {
     "url": "https://github.com/juliorojas81871/To-Do/issues"

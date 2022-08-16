@@ -15,8 +15,6 @@ app.use(cors());
 // Routes
 app.use(routes);
 
-const PORT = process.env.PORT || 5000
-
 mongoose
     .connect(process.env.MONGO_URL, {
         useNewUrlParser: true,
@@ -26,14 +24,15 @@ mongoose
     .catch((err) => console.error(err));
 
 // let port = process.env.PORT;
+const PORT = process.env.port||'500';
 // if(port == null || port == ""){
 //     port = 5000;
 // }
 
-// app.listen(port, () => {
-//     console.log("app listening on port 5000")
-// });
+app.listen(PORT, () => {
+    console.log("app listening on port 5000")
+});
 
-app.listen(process.env.PORT || 5000, function(){
-    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-  });
+// app.listen(process.env.PORT || 5000, function(){
+//     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+//   });
