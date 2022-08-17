@@ -60,6 +60,7 @@ function App() {
       <div className="form">
         <input 
           onChange={(e) => setText(e.target.value)} 
+          // onKeyUp={e => {}}
           type="text" 
           value={text}  
         />
