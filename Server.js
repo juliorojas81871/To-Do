@@ -9,11 +9,17 @@ const routes = require("./routes/TodoRoute");
 
 const app = express();
 
+const isDev = process.env.NODE_ENV === "development";
+
 app.use(express.json());
 app.use(cors());
 
 // Routes
 app.use(routes);
+
+if (!isDev) {
+    app.use(express.static('client/build'))
+}
 
 mongoose
     .connect(process.env.MONGO_URL, {
@@ -24,7 +30,7 @@ mongoose
     .catch((err) => console.error(err));
 
 // let port = process.env.PORT;
-const PORT = process.env.port||'500';
+const PORT = process.env.port || 5000;
 // if(port == null || port == ""){
 //     port = 5000;
 // }

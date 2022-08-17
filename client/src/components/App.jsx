@@ -8,35 +8,42 @@ function App() {
   const [todo, setTodo] = useState([]);
   const [isUpdating, setUpdating] = useState("");
 
+  const getTodos = () => axios.get("/get-todo")
+  .then((res) => setTodo(res.data))
+  .catch((err) => console.log(err))
+
   useEffect(() =>{
-    axios.get("http://localhost:5000/get-todo")
-      .then((res) => setTodo(res.data))
-      .catch((err) => console.log(err));
-  });
+    getTodos()
+  }, []);
    
   const addUpdateItem = () => {
     if (isUpdating === "") {
-      axios.post("http://localhost:5000/save-todo", { text })
+      axios.post("/save-todo", { text })
         .then((res) => {
           console.log(res.data);
           setText("");
+          getTodos()
         })
         .catch((err) => console.log(err));
     }
     else{
-      axios.post("http://localhost:5000/update-todo", { _id: isUpdating, text })
+      axios.post("/update-todo", { _id: isUpdating, text })
         .then((res) => {
           console.log(res.data);
           setText("");
           setUpdating("");
+          getTodos()
         })
         .catch((err) => console.log(err));
     }
   }
 
   const deleteItem = (_id) => {
-    axios.post("http://localhost:5000/delete-todo", { _id })
-      .then((res) => console.log(res.data))
+    axios.post("/delete-todo", { _id })
+      .then((res) => {
+        console.log(res.data); 
+        getTodos()
+      })
       .catch((err) => console.log(err));
   }
 
