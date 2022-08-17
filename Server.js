@@ -9,6 +9,7 @@ const routes = require("./routes/TodoRoute");
 
 const app = express();
 
+//only work on local computer
 const isDev = process.env.NODE_ENV === "development";
 
 app.use(express.json());
@@ -17,6 +18,9 @@ app.use(cors());
 // Routes
 app.use(routes);
 
+// this only runs in production (npm start or on heroku)
+// it will run the backend always and just get the data 
+// from the build when the user want to use it
 if (!isDev) {
     app.use(express.static('client/build'))
 }
@@ -29,16 +33,9 @@ mongoose
     .then(() => console.log("Mongodb Connected..."))
     .catch((err) => console.error(err));
 
-// let port = process.env.PORT;
 const PORT = process.env.PORT || 5000;
-// if(port == null || port == ""){
-//     port = 5000;
-// }
 
 app.listen(PORT, () => {
     console.log("app listening on port 5000")
 });
 
-// app.listen(process.env.PORT || 5000, function(){
-//     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-//   });
