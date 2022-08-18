@@ -60,7 +60,11 @@ function App() {
       <div className="form">
         <input 
           onChange={(e) => setText(e.target.value)} 
-          // onKeyUp={e => {}}
+          onKeyUp={(e) => {
+            if (e.key === "Enter") {
+              addUpdateItem()
+            }
+          }}
           type="text" 
           value={text}  
         />
