@@ -1,9 +1,9 @@
 # Description:
 This code is a React program where the user can enter their list and remove it when they press 
 the bullet note.
-If anyone want try this code, [please click at this link](https://juliorojas81871.github.io/To-Do/).
+If anyone want try this code, [please click at this link](https://to-do--list--app.herokuapp.com/).
 
-# Steps to get code to run:
+# Steps to get code to run (need edits, DO NOT USE):
 1. Open terminal
 2. Type (You can also download the code):
 ```
